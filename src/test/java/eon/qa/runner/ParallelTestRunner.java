@@ -13,7 +13,7 @@ import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import org.apache.commons.io.FileUtils;
 
-public class ParallelTest {
+public class ParallelTestRunner {
 	/**
 	 * Run All Features In Parallel
 	 */

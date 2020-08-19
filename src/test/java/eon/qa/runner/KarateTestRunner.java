@@ -2,7 +2,7 @@ package eon.qa.runner;
 
 import com.intuit.karate.junit5.Karate;
 
-class KarateRunner {
+class KarateTestRunner {
 
 	@Karate.Test
 	Karate testUsers() {
