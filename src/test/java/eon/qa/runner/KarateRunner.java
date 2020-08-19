@@ -1,4 +1,4 @@
-package eon.qa.test;
+package eon.qa.runner;
 
 import com.intuit.karate.junit5.Karate;
 

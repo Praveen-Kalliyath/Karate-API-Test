@@ -1,4 +1,4 @@
-package eon.qa.test;
+package eon.qa.runner;
 
 import org.junit.jupiter.api.Test;
 import com.intuit.karate.Results;
