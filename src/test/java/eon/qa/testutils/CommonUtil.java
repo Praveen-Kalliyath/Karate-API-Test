@@ -61,6 +61,24 @@ public class CommonUtil {
 	}
 
 	/**
+	 * Method to retrieve random charaacters
+	 * 
+	 * @param len
+	 * 
+	 * @return random alphabets
+	 */
+	public static String getRandomChars(int len) {
+		char ch[] = "~`!@#$%^&*() {}[]:\'\",./?><;".toCharArray();
+		char c[] = new char[len];
+		SecureRandom random = new SecureRandom();
+		for (int i = 0; i < len; i++) {
+			c[i] = ch[random.nextInt(ch.length)];
+		}
+		System.out.println("Random Alphabet: " + new String(c));
+		return new String(c);
+	}
+
+	/**
 	 * Method to retrieve random mix of alphabets & numbers
 	 * 
 	 * @param len
@@ -69,6 +87,63 @@ public class CommonUtil {
 	 */
 	public static String getRandomAlphaNumeric(int len) {
 		char ch[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
+		char c[] = new char[len];
+		SecureRandom random = new SecureRandom();
+		for (int i = 0; i < len; i++) {
+			c[i] = ch[random.nextInt(ch.length)];
+		}
+		System.out.println("Random AlphaNumeric: " + new String(c));
+		return new String(c);
+	}
+
+	/**
+	 * Method to retrieve random mix of alphabets, numbers & characters
+	 * 
+	 * @param len
+	 * 
+	 * @return random alphaNumeric
+	 */
+	public static String getRandomAlphaNumericChars(int len) {
+		char ch[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`!@#$%^&*() {}[]:\\'\\\",./?><;"
+				.toCharArray();
+		char c[] = new char[len];
+		SecureRandom random = new SecureRandom();
+		for (int i = 0; i < len; i++) {
+			c[i] = ch[random.nextInt(ch.length)];
+		}
+		System.out.println("Random AlphaNumeric: " + new String(c));
+		return new String(c);
+	}
+	
+	/**
+	 * Method to retrieve random mix of numbers & characters
+	 * 
+	 * @param len
+	 * 
+	 * @return random alphaNumeric
+	 */
+	public static String getRandomNumericChars(int len) {
+		char ch[] = "0123456789~`!@#$%^&*() {}[]:\\'\\\",./?><;"
+				.toCharArray();
+		char c[] = new char[len];
+		SecureRandom random = new SecureRandom();
+		for (int i = 0; i < len; i++) {
+			c[i] = ch[random.nextInt(ch.length)];
+		}
+		System.out.println("Random AlphaNumeric: " + new String(c));
+		return new String(c);
+	}
+	
+	/**
+	 * Method to retrieve random mix of alphabets & characters
+	 * 
+	 * @param len
+	 * 
+	 * @return random alphaNumeric
+	 */
+	public static String getRandomAlphaChars(int len) {
+		char ch[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~`!@#$%^&*() {}[]:\\'\\\",./?><;"
+				.toCharArray();
 		char c[] = new char[len];
 		SecureRandom random = new SecureRandom();
 		for (int i = 0; i < len; i++) {
@@ -322,13 +397,6 @@ public class CommonUtil {
 	}
 
 	/**
-	 * Java main to test utility method
-	 */
-	public static void main(String args[]) {
-		System.out.println("STRINGS ARE: " + splitString("abc:::text", ":::")[0]);
-	}
-
-	/**
 	 * GET JSON FROM FILE
 	 * 
 	 * @param jsonFilePath
@@ -357,4 +425,12 @@ public class CommonUtil {
 				.mappingProvider(new JacksonMappingProvider()).build();
 		return using(configuration).parse(payload);
 	}
+
+	/**
+	 * Java main to test utility method
+	 */
+	public static void main(String args[]) {
+		System.out.println("STRINGS ARE: " + getRandomChars(5));
+	}
+
 }
